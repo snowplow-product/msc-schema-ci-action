@@ -1,0 +1,57 @@
+# action.yml
+name: 'Snowplow Schema CI - Check'
+description: 'Verify that all schemas referenced in the schema manifest are deployed to a particular environment'
+author: 'Snowplow Analytics'
+branding:
+  icon: 'check-circle'
+  color: 'purple'
+
+inputs:
+  manifest-path:  
+    description: 'Path to the manifest file describing schema dependencies of your app'
+    required: true
+    default: 'snowplow-schemas.json'
+  organization-id: 
+    description: 'Snowplow organization id'
+    required: true
+  auth-client-id:
+    description: ''
+    required: true
+  auth-client-secret:
+    description: ''
+    required: true
+  auth-audience:
+    description: ''
+    required: true
+  auth-username:
+    description: ''
+    required: true
+  auth-password: 
+    description: ''
+    required: true 
+  environment: 
+    description: 'The environment against which the check is performed'
+    required: true
+
+runs:
+  using: 'docker'
+  image: '../Dockerfile'
+  args:
+    - 'check'
+    - '--manifestPath'
+    - ${{ format('{0}/{1}', github.workspace, inputs.manifest-path ) }}
+    - '--organizationId'
+    - ${{ inputs.organization-id }}
+    - '--clientId'
+    - ${{ inputs.auth-client-id }}
+    - '--clientSecret'
+    - ${{ inputs.auth-client-secret }}
+    - '--audience'
+    - ${{ inputs.auth-audience }}
+    - '--username'
+    - ${{ inputs.auth-username }}
+    - '--password'
+    - ${{ inputs.auth-password }}
+    - '--environment'
+    - ${{ inputs.environment }}
+
