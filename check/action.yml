@@ -1,6 +1,5 @@
-# action.yml
 name: 'Snowplow Schema CI - Check'
-description: 'Verify that all schemas referenced in the schema manifest are deployed to a particular environment'
+description: 'Verify that all of your app's schema dependencies are already deployed into the specified environment'
 author: 'Snowplow Analytics'
 branding:
   icon: 'check-circle'
@@ -8,7 +7,7 @@ branding:
 
 inputs:
   manifest-path:  
-    description: 'Path to the manifest file describing schema dependencies of your app'
+    description: 'Path to the manifest file describing schema dependencies of your app (relative to the repo's root)'
     required: true
     default: 'snowplow-schemas.json'
   organization-id: 
