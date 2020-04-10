@@ -1,5 +1,7 @@
 # Snowplow Schema CI GitHub Actions
 
+[![](https://img.shields.io/bintray/v/snowplow/snowplow-generic/schema-ci?color=blue&label=version&logo=github)](https://bintray.com/snowplow/snowplow-generic/schema-ci/0.1.0)
+
 A set of [GitHub Action](https://github.com/features/actions) for using the [Snowplow's Schema CI](https://bintray.com/snowplow/snowplow-generic/schema-ci) 
 tool from your CI/CD pipeline
 
