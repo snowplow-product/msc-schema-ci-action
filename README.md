@@ -32,4 +32,4 @@ jobs:
         environment: ${{ env.ENVIRONMENT }}
 ```
 
-> Note: GitHub Actions will not pass on secrets set in the repository to forks being used in pull requests, and so the Snyk actions that require the token will fail to run.
+> Note: GitHub Actions will not pass on secrets set in the repository to forks being used in pull requests, and so the Snowplow's Schema CI actions that require them will fail to run.
