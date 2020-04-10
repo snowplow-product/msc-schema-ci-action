@@ -53,4 +53,4 @@ runs:
     - ${{ inputs.auth-password }}
     - '--environment'
     - ${{ inputs.environment }}
-
+    - '2>/dev/null'
