@@ -38,7 +38,7 @@ runs:
   args:
     - 'check'
     - '--manifestPath'
-    - ${{ format('{0}/{1}', github.workspace, inputs.manifest-path ) }}
+    - ${{ format('{0}/{1}', env.GITHUB_WORKSPACE, inputs.manifest-path ) }}
     - '--organizationId'
     - ${{ inputs.organization-id }}
     - '--clientId'
