@@ -1,5 +1,5 @@
 name: 'Snowplow Schema CI - Check'
-description: 'Verify that all of your app's schema dependencies are already deployed into the specified environment'
+description: 'Verify that all of your app''s schema dependencies are already deployed into the specified environment'
 author: 'Snowplow Analytics'
 branding:
   icon: 'check-circle'
@@ -7,26 +7,26 @@ branding:
 
 inputs:
   manifest-path:  
-    description: 'Path to the manifest file describing schema dependencies of your app (relative to the repo's root)'
+    description: 'Path to the manifest file describing schema dependencies of your app (relative to the repo''s root)'
     required: true
     default: 'snowplow-schemas.json'
   organization-id: 
-    description: 'Snowplow organization id'
+    description: 'The Organization Id (UUID)'
     required: true
   auth-client-id:
-    description: ''
+    description: 'Client Id of the registered OAuth2 app'
     required: true
   auth-client-secret:
-    description: ''
+    description: 'Client Secret of the registered OAuth2 app'
     required: true
   auth-audience:
-    description: ''
+    description: 'Audience of the registered OAuth2 app'
     required: true
   auth-username:
-    description: ''
+    description: 'Username of the CI user'
     required: true
   auth-password: 
-    description: ''
+    description: 'Password of the CI user'
     required: true 
   environment: 
     description: 'The environment against which the check is performed'
