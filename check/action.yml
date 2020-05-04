@@ -10,22 +10,10 @@ inputs:
     description: 'Absolute path to the manifest file describing schema dependencies of your app'
     required: true
     default: 'snowplow-schemas.json'
-  organization-id: 
-    description: 'The Organization Id (UUID)'
-    required: true
-  auth-client-id:
-    description: 'Client Id of the registered OAuth2 app'
-    required: true
-  auth-client-secret:
-    description: 'Client Secret of the registered OAuth2 app'
-    required: true
-  auth-audience:
-    description: 'Audience of the registered OAuth2 app'
-    required: true
-  auth-username:
+  username:
     description: 'Username of the CI user'
     required: true
-  auth-password: 
+  password: 
     description: 'Password of the CI user'
     required: true 
   environment: 
@@ -39,17 +27,9 @@ runs:
     - 'check'
     - '--manifestPath'
     - ${{ inputs.manifest-path }}
-    - '--organizationId'
-    - ${{ inputs.organization-id }}
-    - '--clientId'
-    - ${{ inputs.auth-client-id }}
-    - '--clientSecret'
-    - ${{ inputs.auth-client-secret }}
-    - '--audience'
-    - ${{ inputs.auth-audience }}
     - '--username'
-    - ${{ inputs.auth-username }}
+    - ${{ inputs.username }}
     - '--password'
-    - ${{ inputs.auth-password }}
+    - ${{ inputs.password }}
     - '--environment'
     - ${{ inputs.environment }}

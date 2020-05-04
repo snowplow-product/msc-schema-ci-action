@@ -1,6 +1,6 @@
 # Snowplow Schema CI GitHub Actions
 
-[![](https://img.shields.io/bintray/v/snowplow/snowplow-generic/schema-ci?color=blue&label=version&logo=github)](https://bintray.com/snowplow/snowplow-generic/schema-ci/0.1.0)
+[![](https://img.shields.io/bintray/v/snowplow/snowplow-generic/schema-ci?color=blue&label=version&logo=github)](https://bintray.com/snowplow/snowplow-generic/schema-ci/0.2.0)
 
 A set of [GitHub Action](https://github.com/features/actions) for using the [Snowplow's Schema CI](https://bintray.com/snowplow/snowplow-generic/schema-ci) 
 tool from your CI/CD pipeline
@@ -23,12 +23,8 @@ jobs:
       uses: snowplow-product/msc-schema-ci-action/check@master
       with:
         manifest-path: 'snowplow-schemas.json'            
-        organization-id: ${{ env.ORGANIZATION_ID }}
-        auth-client-id: ${{ secrets.AUTH_CLIENT_ID }}
-        auth-client-secret: ${{ secrets.AUTH_CLIENT_SECRET }}
-        auth-audience: ${{ env.AUTH_AUDIENCE }}
-        auth-username: ${{ secrets.AUTH_USER }}
-        auth-password: ${{ secrets.AUTH_PASSWORD }}
+        username: ${{ secrets.AUTH_USER }}
+        password: ${{ secrets.AUTH_PASSWORD }}
         environment: ${{ env.ENVIRONMENT }}
 ```
 
