@@ -12,10 +12,10 @@ A different action is required depending on the task you want to integrate on yo
 Here's an example of using one of the Actions, in this case to check deployments
 
 ```yaml
-name: Example workflow using Snyk
+name: Example workflow using Snowplow's Schema CI
 on: push
 jobs:
-  security:
+  schema-check:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
