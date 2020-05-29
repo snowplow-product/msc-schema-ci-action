@@ -1,6 +1,6 @@
 FROM openjdk:8
 
-RUN curl -L "http://dl.bintray.com/snowplow/snowplow-generic/schema_ci_0.2.0.zip" | jar xv && chmod +x ./schema-ci
+RUN curl -L "https://dl.bintray.com/snowplow/snowplow-generic/data_structures_ci_0.3.0.zip" | jar xv && chmod +x ./data-structures-ci
 
-ENTRYPOINT ["/schema-ci"]
+ENTRYPOINT ["/data-structures-ci"]
 CMD ["--help"]

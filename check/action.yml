@@ -1,5 +1,5 @@
-name: 'Snowplow Schema CI - Check'
-description: 'Verify that all of your app''s schema dependencies are already deployed into the specified environment'
+name: 'Snowplow Data Structures CI - Check'
+description: 'Verify that all of your app''s data structures dependencies are already deployed into the specified environment'
 author: 'Snowplow Analytics'
 branding:
   icon: 'check-circle'
@@ -7,7 +7,7 @@ branding:
 
 inputs:
   manifest-path:  
-    description: 'Absolute path to the manifest file describing schema dependencies of your app'
+    description: 'Absolute path to the manifest file describing data structures dependencies of your app'
     required: true
     default: 'snowplow-schemas.json'
   username:
