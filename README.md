@@ -3,7 +3,8 @@
 [![](https://img.shields.io/bintray/v/snowplow/snowplow-generic/data-structures-ci?color=blue&label=version&logo=github)](https://bintray.com/snowplow/snowplow-generic/data-structures-ci/0.3.0)
 
 A set of [GitHub Actions](https://github.com/features/actions) for integrating [Snowplow's Data Structures CI](https://snowplowanalytics.com/products/snowplow-insights/) 
-into your CI/CD pipeline
+into your CI/CD pipeline.  
+To use these you’ll need to be a Snowplow customer, find out more [here](https://snowplowanalytics.com/pricing/).
 
 A different action is required depending on the task you want to integrate on your workflow. Currently supported actions are:
 
