@@ -1,0 +1,18 @@
+name: 'Snowplow Data Structures CI'
+description: 'Integrate Snowplow Data Structures API into your CI/CD pipeline'
+author: 'Snowplow Analytics'
+branding:
+  icon: 'check-circle'
+  color: 'purple'
+inputs:
+  command:
+    description: 'Which Data Structures CI command to run, defaults to check'
+    default: 'check'
+  args:
+    description: 'Additional arguments to pass to Data Structures CI'
+runs:
+  using: 'docker'
+  image: '../Dockerfile'
+  args:
+    - ${{ inputs.command }}
+    - ${{ inputs.args }} 
