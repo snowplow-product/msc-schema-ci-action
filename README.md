@@ -1,6 +1,6 @@
 # Snowplow Data Structures CI GitHub Actions
 
-[![](https://img.shields.io/bintray/v/snowplow/snowplow-generic/data-structures-ci?color=blue&label=version&logo=github)](https://bintray.com/snowplow/snowplow-generic/data-structures-ci/0.3.1)
+[![](https://img.shields.io/bintray/v/snowplow/snowplow-generic/data-structures-ci?color=blue&label=version&logo=github)](https://bintray.com/snowplow/snowplow-generic/data-structures-ci/0.3.2)
 
 A set of [GitHub Actions](https://github.com/features/actions) for integrating [Snowplow's Data Structures CI](https://snowplowanalytics.com/products/snowplow-insights/) 
 into your CI/CD pipeline.  
@@ -21,7 +21,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Run Snowplow's Data Structures CI
-      uses: snowplow-product/msc-schema-ci-action/check@v0.3.1
+      uses: snowplow-product/msc-schema-ci-action/check@v0.3.2
       with:
         manifest-path: 'snowplow-schemas.json'            
         username: ${{ secrets.AUTH_USER }}
