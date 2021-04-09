@@ -1,6 +1,6 @@
 # Snowplow Data Structures CI GitHub Actions
 
-[![](https://img.shields.io/github/downloads/snowplow-product/msc-schema-ci-tool/total)](https://github.com/snowplow-product/msc-schema-ci-tool/releases/download/0.3.3/data_structures_ci_0.3.3.zip)
+[![](https://img.shields.io/github/downloads/snowplow-product/msc-schema-ci-tool/total)](https://github.com/snowplow-product/msc-schema-ci-tool/releases/download/0.3.4/data_structures_ci_0.3.4.zip)
 
 A set of [GitHub Actions](https://github.com/features/actions) for integrating [Snowplow's Data Structures CI](https://snowplowanalytics.com/products/snowplow-insights/) 
 into your CI/CD pipeline.  
