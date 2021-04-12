@@ -21,7 +21,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Run Snowplow's Data Structures CI
-      uses: snowplow-product/msc-schema-ci-action/check@v0.3.3
+      uses: snowplow-product/msc-schema-ci-action/check@v0.3.4
       with:
         manifest-path: 'snowplow-schemas.json'            
         username: ${{ secrets.AUTH_USER }}
