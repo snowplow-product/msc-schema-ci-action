@@ -6,16 +6,16 @@ branding:
   color: 'purple'
 
 inputs:
+  organization-id:
+    description: 'UUID of the Snowplow organization as found in Snowplow BDP Console'
+    required: true
+  api-key: 
+    description: 'Snowplow BDP Console API key'
+    required: true
   manifest-path:  
     description: 'Absolute path to the manifest file describing data structures dependencies of your app'
     required: true
     default: 'snowplow-schemas.json'
-  username:
-    description: 'Username of the CI user'
-    required: true
-  password: 
-    description: 'Password of the CI user'
-    required: true 
   environment: 
     description: 'The environment against which the check is performed'
     required: true
@@ -23,13 +23,12 @@ inputs:
 runs:
   using: 'docker'
   image: '../Dockerfile'
+  env:
+    ORGANIZATION_ID: ${{ inputs.organization-id }}
+    API_KEY: ${{ inputs.api-key }}
   args:
     - 'check'
     - '--manifestPath'
     - ${{ inputs.manifest-path }}
-    - '--username'
-    - ${{ inputs.username }}
-    - '--password'
-    - ${{ inputs.password }}
     - '--environment'
     - ${{ inputs.environment }}

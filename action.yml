@@ -4,15 +4,26 @@ author: 'Snowplow Analytics'
 branding:
   icon: 'check-circle'
   color: 'purple'
+
 inputs:
+  organization-id:
+    description: 'UUID of the Snowplow organization as found in Snowplow BDP Console'
+    required: true
+  api-key: 
+    description: 'Snowplow BDP Console API key'
+    required: true
   command:
     description: 'Which Data Structures CI command to run, defaults to check'
     default: 'check'
   args:
     description: 'Additional arguments to pass to Data Structures CI'
+
 runs:
   using: 'docker'
   image: '../Dockerfile'
+  env:
+    ORGANIZATION_ID: ${{ inputs.organization-id }}
+    API_KEY: ${{ inputs.api-key }}
   args:
     - ${{ inputs.command }}
     - ${{ inputs.args }} 
