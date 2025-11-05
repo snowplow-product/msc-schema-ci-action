@@ -1,4 +1,4 @@
-FROM openjdk:8
+FROM eclipse-temurin:17-jdk
 
 RUN curl -L "https://github.com/snowplow-product/msc-schema-ci-tool/releases/download/1.0.0/data_structures_ci_1.0.0.zip" | jar xv && chmod +x ./data-structures-ci
 
