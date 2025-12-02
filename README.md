@@ -21,7 +21,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Run Snowplow's Data Structures CI
-      uses: snowplow-product/msc-schema-ci-action/check@v1
+      uses: snowplow-product/msc-schema-ci-action/check@v2
       with:
         organization-id: ${{ env.SNOWPLOW_ORG_ID }}
         api-key-id: ${{ secrets.SNOWPLOW_API_KEY_ID }}
