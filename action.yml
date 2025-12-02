@@ -7,10 +7,13 @@ branding:
 
 inputs:
   organization-id:
-    description: 'UUID of the Snowplow organization as found in Snowplow BDP Console'
+    description: 'UUID of the Snowplow organization as found in Snowplow Console'
+    required: true
+  api-key-id: 
+    description: 'Snowplow Console API key ID'
     required: true
   api-key: 
-    description: 'Snowplow BDP Console API key'
+    description: 'Snowplow Console API key'
     required: true
   command:
     description: 'Which Data Structures CI command to run, defaults to check'
@@ -23,6 +26,7 @@ runs:
   image: '../Dockerfile'
   env:
     ORGANIZATION_ID: ${{ inputs.organization-id }}
+    API_KEY_ID: ${{ inputs.api-key-id }}
     API_KEY: ${{ inputs.api-key }}
   args:
     - ${{ inputs.command }}
