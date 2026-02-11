@@ -24,15 +24,26 @@ inputs:
     required: true
 
 runs:
-  using: 'docker'
-  image: '../Dockerfile'
-  env:
-    ORGANIZATION_ID: ${{ inputs.organization-id }}
-    API_KEY_ID: ${{ inputs.api-key-id }}
-    API_KEY: ${{ inputs.api-key }}
-  args:
-    - 'check'
-    - '--manifestPath'
-    - ${{ inputs.manifest-path }}
-    - '--environment'
-    - ${{ inputs.environment }}
+  using: 'composite'
+  steps:
+    - name: Set up JDK
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+    - name: Download data-structures-ci tool
+      shell: bash
+      run: |
+        curl -L "https://github.com/snowplow-product/msc-schema-ci-tool/releases/download/2.0.0/data_structures_ci_2.0.0.zip" -o data_structures_ci.zip
+        unzip data_structures_ci.zip
+        chmod +x ./data-structures-ci
+    - name: Run check
+      shell: bash
+      env:
+        ORGANIZATION_ID: ${{ inputs.organization-id }}
+        API_KEY_ID: ${{ inputs.api-key-id }}
+        API_KEY: ${{ inputs.api-key }}
+      run: |
+        ./data-structures-ci check \
+          --manifestPath "${{ inputs.manifest-path }}" \
+          --environment "${{ inputs.environment }}"
